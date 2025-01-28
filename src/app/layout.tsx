@@ -5,17 +5,19 @@ import { EB_Garamond } from "next/font/google"
 import { cn } from "@/utils"
 
 import "./globals.css"
+import ThemeProvider from "./components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const eb_garamond = EB_Garamond({
   subsets: ["latin"],
   variable: "--font-heading",
+  display: "swap"
 })
 
 export const metadata: Metadata = {
   title: "jStack App",
   description: "Created using jStack",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/icon.svg" }],
 }
 
 export default function RootLayout({
@@ -26,8 +28,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
       <body className="font-sans bg-brand-50 text-brand-950 antialiased">
-        <Providers>{children}</Providers>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Providers>
+            {children}
+          </Providers>
+        </ThemeProvider>
       </body>
-    </html>
+    </html >
   )
 }
