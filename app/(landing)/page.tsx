@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <section className="relative py-20 sm:py-32 bg-white dark:bg-gray-950">
+      <section className="relative py-24 sm:py-32 bg-white">
         <MaxWidthWrapper className="text-center">
           <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-12 items-center w-full">
             {/* Left column: Text content and CTA */}
@@ -15,7 +15,7 @@ export default function Home() {
                 <span className="block">Real-Time SaaS Insights,</span>
                 <span className="block mt-2 text-blue-600 dark:text-blue-500">Delivered to Your Discord</span>
               </Heading>
-              <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+              <p className="text-base/7 text-gray-600 max-w-prose text-left text-pretty">
                 PingPanda is the easiest way to monitor your SaaS. Get instant notifications for
                 <span className="font-semibold text-gray-900 dark:text-white">
                   {" "}
