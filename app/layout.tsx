@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
@@ -42,8 +42,3 @@ export default function RootLayout({
   );
 }
 
-//background - #14151a
-//background-mute - #282a36
-//dark-accent- #5d5986 
-//highlightcolor-#f472b6
-//mute-accent-#f9f1e1
