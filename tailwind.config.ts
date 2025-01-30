@@ -34,7 +34,6 @@ export default {
         'bun-background': "#14151a",
         'bun-mute-background': "#282a36",
         'bun-accent-purple': "#5d5986",
-        // 'bun-purple': "#f472b6",
         'bun-mute-white': "#f9f1e1",
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
