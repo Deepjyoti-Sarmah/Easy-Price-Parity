@@ -80,7 +80,7 @@ export const MobileNav = ({ user }: MobileNavProps) => {
   }
 
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
           variant="ghost"
