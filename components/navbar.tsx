@@ -2,6 +2,7 @@ import Link from "next/link"
 import { MaxWidthWrapper } from "./max-width-wrapper"
 import { Button, buttonVariants } from "./ui/button"
 import { ArrowRight } from "lucide-react"
+import { MobileNav } from "./mobile-nav"
 
 export const Navbar = async () => {
   // const user = await currentUser()
@@ -15,7 +16,8 @@ export const Navbar = async () => {
             Parity<span className="text-bunPurple-300/90">Cart</span>
           </Link>
 
-          <div className="h-full flex items-center space-x-4 text-zinc-300">
+          {/* Desktop navigation */}
+          <div className="hidden md:flex h-full items-center space-x-4 text-zinc-300">
             {user ? (
               <>
                 {/* <SignOutButton> */}
@@ -31,7 +33,7 @@ export const Navbar = async () => {
                   href="/dashboard"
                   className={buttonVariants({
                     size: "sm",
-                    className: "flex items-center gap-1 ",
+                    className: "flex items-center gap-1",
                   })}
                 >
                   Dashboard <ArrowRight className="ml-1.5 size-4" />
@@ -73,6 +75,11 @@ export const Navbar = async () => {
                 </Link>
               </>
             )}
+          </div>
+
+          {/* Mobile navigation */}
+          <div className="md:hidden">
+            <MobileNav user={user} />
           </div>
         </div>
       </MaxWidthWrapper>

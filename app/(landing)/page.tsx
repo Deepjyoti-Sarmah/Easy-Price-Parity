@@ -11,7 +11,7 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-12 items-start w-full">
           {/* Left column */}
-          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left sm:text-center">
             {/* Product Badge */}
             {/* <ProductBadge /> */}
 
@@ -116,4 +116,5 @@ export default function Home() {
     </section >
   )
 }
+
 
