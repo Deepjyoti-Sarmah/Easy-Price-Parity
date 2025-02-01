@@ -9,7 +9,7 @@ export function BrowserPreview() {
   return (
     <div className="relative w-full h-full">
       <div
-        className="absolute inset-0 overflow-hidden rounded-xl border border-white/10 bg-bun-mute-background/60 shadow-2xl backdrop-blur transition-transform duration-500 "
+        className="absolute inset-0 overflow-hidden rounded-xl border border-white/10 bg-bun-mute-background/60 shadow-2xl backdrop-blur transition-transform duration-500"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -57,37 +57,41 @@ export function BrowserPreview() {
         </div>
 
         {/* Content */}
-        <div className="h-full bg-gradient-to-br from-bun-mute-background/95 via-bun-mute-background/90 to-bun-mute-background/80 p-8">
-          <div className="grid h-full grid-cols-3 gap-4">
-            {[
-              { name: "Next.js", color: "from-bunPurple-500/20" },
-              { name: "Tailwind", color: "from-bunPurple-500/20" },
-              { name: "MongoDB", color: "from-bunPurple-500/20" },
-              { name: "Stripe", color: "from-bunPurple-500/20" },
-              { name: "NextAuth", color: "from-bunPurple-500/20" },
-              { name: "Mailgun", color: "from-bunPurple-500/20" },
-            ].map((tech, index) => (
-              <div
-                key={tech.name}
-                className={`group relative flex flex-col items-center justify-center rounded-lg bg-white/5 p-4 transition-all duration-300 hover:bg-white/10 overflow-hidden ${isHovered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                  }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                {/* Background gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${tech.color} to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
-                />
+        <div className="h-full bg-gradient-to-br from-bun-mute-background/95 via-bun-mute-background/90 to-bun-mute-background/80 p-6">
+          {/* Banner */}
+          <div className="bg-bunPurple-500/50 text-white text-center py-2 px-4 rounded-lg mb-6 hidden sm:block">
+            <p className="text-sm font-medium">
+              🎉 Special offer: Use code <span className="font-bold text-lg">LAUNCH30</span> for 30% off!
+            </p>
+          </div>
 
-                <div className="relative z-10 mb-2 rounded-lg bg-white/10 p-3">
-                  <img
-                    src="/placeholder.svg?height=40&width=40"
-                    alt={tech.name}
-                    className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-                <span className="relative z-10 text-sm font-medium text-gray-300">{tech.name}</span>
-              </div>
-            ))}
+          {/* Skeleton Content */}
+          <div className="space-y-6">
+            {/* Header */}
+            <div className="h-8 bg-white/10 rounded-lg w-3/4" />
+
+            {/* Text blocks */}
+            <div className="space-y-3">
+              <div className="h-4 bg-white/10 rounded w-full" />
+              <div className="h-4 bg-white/10 rounded w-5/6" />
+              <div className="h-4 bg-white/10 rounded w-4/6" />
+            </div>
+
+            {/* Image placeholder */}
+            <div className="h-40 bg-white/5 rounded-lg" />
+
+            {/* More text blocks */}
+            <div className="space-y-3">
+              <div className="h-4 bg-white/10 rounded w-5/6" />
+              <div className="h-4 bg-white/10 rounded w-full" />
+              <div className="h-4 bg-white/10 rounded w-4/6" />
+            </div>
+
+            {/* Buttons */}
+            <div className="flex space-x-4">
+              <div className="h-10 bg-bunPurple-500/30 rounded-lg w-1/3" />
+              <div className="h-10 bg-white/10 rounded-lg w-1/3" />
+            </div>
           </div>
         </div>
       </div>
@@ -95,14 +99,7 @@ export function BrowserPreview() {
       {/* Fade-away effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-bun-background/95 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bun-background/50 pointer-events-none" />
-
-      {/* Bottom text */}
-      {/* <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm text-zinc-500"> */}
-      {/*   + all the boring stuff (SEO tags, API calls, customer support) */}
-      {/* </div> */}
     </div>
   )
 }
-
-
 

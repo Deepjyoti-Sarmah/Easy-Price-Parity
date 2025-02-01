@@ -6,14 +6,14 @@ import { BrowserPreview } from "@/components/browser-preview"
 
 export default function Home() {
   return (
-    <section className="relative py-24 sm:py-32 bg-bun-background overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+    <section className="relative sm:py-24 lg:py-30 bg-bun-background overflow-hidden">
+      {/* <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" /> */}
       <MaxWidthWrapper className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 lg:gap-x-12 items-start w-full">
           {/* Left column */}
-          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left sm:text-center">
+          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
             {/* Heading */}
-            <Heading className="text-bun-mute-white lg:text-5xl">
+            <Heading className="text-bun-mute-white lg:text-6xl">
               <span>Price globally with</span>
               <div className="mt-3 flex flex-wrap gap-2 justify-center lg:justify-start">
                 <span>confidence,</span>
@@ -21,18 +21,18 @@ export default function Home() {
               </div>
             </Heading>
 
-            <p className="mt-10 text-base/7 max-w-prose text-pretty text-zinc-400">
+            <p className="mt-8 text-base sm:text-lg text-pretty text-zinc-400">
               Automatically adjust your SaaS prices based on each country's purchasing power. Stop losing international
               customers to one-size-fits-all pricing.
             </p>
 
-            <ul className="mt-8 space-y-3 text-base/7 text-zinc-400 text-left inline-flex flex-col">
+            <ul className="mt-6 space-y-2 text-base sm:text-lg text-zinc-400 text-left inline-flex flex-col">
               {[
                 "Instant price optimization for 180+ countries",
                 "One-click integration with Stripe and other payment gateways",
                 "Real-time analytics on regional conversion rates",
               ].map((item, index) => (
-                <li key={index} className="flex gap-2 items-center">
+                <li key={index} className="flex gap-3 items-center">
                   <Check className="size-5 shrink-0 text-bunPurple-400/60" />
                   <span>{item}</span>
                 </li>
@@ -42,11 +42,11 @@ export default function Home() {
             <div className="mt-10 flex flex-col items-center lg:items-start gap-4">
               <ShinyButton
                 href="/sign-up"
-                className="relative z-10 h-14 text-base w-2/3 shadow-lg transition-shadow duration-300 hover:shadow-xl font-semibold px-12"
+                className="relative z-10 h-14 text-base w-full sm:w-2/3 shadow-lg transition-shadow duration-300 hover:shadow-xl font-semibold px-12"
               >
                 Start Free Trial
               </ShinyButton>
-              <div className="flex items-center gap-2 text-sm">
+              <div className="flex items-center gap-2 text-sm sm:text-base">
                 <span className="text-green-500/80 font-medium">$100 off</span>
                 <span className="text-zinc-500">for the first 6260 customers (7 left)</span>
               </div>
