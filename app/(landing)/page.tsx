@@ -8,12 +8,12 @@ export default function Home() {
   return (
     <section className="relative py-24 sm:py-32 bg-bun-background overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
-      <MaxWidthWrapper>
-        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-12 items-start w-full">
+      <MaxWidthWrapper className="relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 lg:gap-x-12 items-start w-full">
           {/* Left column */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left sm:text-center">
             {/* Heading */}
-            <Heading className="text-bun-mute-white lg:text-6xl">
+            <Heading className="text-bun-mute-white lg:text-5xl">
               <span>Price globally with</span>
               <div className="mt-3 flex flex-wrap gap-2 justify-center lg:justify-start">
                 <span>confidence,</span>
@@ -47,14 +47,14 @@ export default function Home() {
                 Start Free Trial
               </ShinyButton>
               <div className="flex items-center gap-2 text-sm">
-                <span className="text-green-500 font-medium">$100 off</span>
+                <span className="text-green-500/80 font-medium">$100 off</span>
                 <span className="text-zinc-500">for the first 6260 customers (7 left)</span>
               </div>
             </div>
           </div>
 
           {/* Right column: Browser Preview */}
-          <div className="relative lg:mt-8">
+          <div className="relative lg:mt-6 lg:absolute lg:top-0 lg:right-0 lg:w-1/2 lg:h-5/6">
             <BrowserPreview />
           </div>
         </div>
