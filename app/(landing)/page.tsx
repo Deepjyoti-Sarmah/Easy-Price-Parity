@@ -65,7 +65,7 @@ export default function Home() {
       {/* More info Section */}
       <section id="features" className="relative py-24 sm:py-30">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
-          <div>
+          <div className="text-center">
             <h2 className="text-center text-base/7 font-semibold text-bun-mute-white">
               Intuitive Monitoring
             </h2>
