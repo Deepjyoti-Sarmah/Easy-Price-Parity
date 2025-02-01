@@ -1,13 +1,13 @@
 import { Heading } from "@/components/heading"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { ShinyButton } from "@/components/shinny-button"
-import { Check } from "lucide-react"
+import { Check, Section } from "lucide-react"
 import { BrowserPreview } from "@/components/browser-preview"
+import Image from "next/image"
 
 export default function Home() {
   return (
     <section className="relative sm:py-24 lg:py-30 bg-bun-background overflow-hidden">
-      {/* <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" /> */}
       <MaxWidthWrapper className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 lg:gap-x-12 items-start w-full">
           {/* Left column */}
@@ -60,6 +60,10 @@ export default function Home() {
         </div>
       </MaxWidthWrapper>
     </section>
+
+    // More info Section
+
+
   )
 }
 

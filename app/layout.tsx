@@ -13,7 +13,7 @@ const eb_garamond = EB_Garamond({
 export const metadata: Metadata = {
   title: "ParityCart",
   description: "Smart pricing for global markets",
-  icons: [{ rel: "icon", url: "/brand-logo-color-svg.svg" }],
+  icons: [{ rel: "icon", url: "/icon-1.svg" }],
 };
 
 export default function RootLayout({
