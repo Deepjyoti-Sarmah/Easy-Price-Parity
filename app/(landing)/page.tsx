@@ -6,6 +6,7 @@ import { BrowserPreview } from "@/components/browser-preview"
 import Image from "next/image"
 import BentoGrid from "@/components/bento-grid"
 import PricingCard from "@/components/price-card"
+import { subscriptionTiersInOrder } from "@/lib/subscriptionTiersInOrder"
 
 export default function Home() {
   return (
@@ -81,10 +82,10 @@ export default function Home() {
         <h2 className="text-4xl text-center text-balance font-semibold mb-8">
           Pricing software which pays for itself 20x over
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-xl mx-auto">
-          {/* {subscriptionTiersInOrder.map(tier => ( */}
-          <PricingCard />
-          {/* ))} */}
+        <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-4 max-w-screen-xl mx-auto py-10">
+          {subscriptionTiersInOrder.map(tier => (
+            <PricingCard key={tier.name} {...tier} />
+          ))}
         </div>
       </section>
 
