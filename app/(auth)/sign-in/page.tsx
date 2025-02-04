@@ -1,5 +1,6 @@
 "use client"
 
+import { SignInForm } from "@/components/auth/SignInForm"
 import { useSearchParams } from "next/navigation"
 
 const SignInPage = () => {
