@@ -1,11 +1,12 @@
 "use client"
 
-import { SignUpForm } from "@/components/auth/SignUpForm"
+import { Heading } from "@/components/heading"
+
 
 const SignUpPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
-      <SignUpForm />
+      <Heading>Sign Up</Heading>
     </div>
   )
 }
