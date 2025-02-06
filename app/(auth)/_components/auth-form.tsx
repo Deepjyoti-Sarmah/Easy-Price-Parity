@@ -29,7 +29,7 @@ export function AuthForm({ className, mode = "sign-in", ...props }: AuthFormProp
 
       await authClient.signIn.social({
         provider,
-        callbackURL: "/dashboard", // Note the change from callbackUrl to callbackURL
+        callbackURL: "/", // Note the change from callbackUrl to callbackURL
       })
 
     } catch (error) {
