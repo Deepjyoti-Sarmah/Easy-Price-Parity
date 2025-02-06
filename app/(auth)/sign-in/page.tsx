@@ -8,7 +8,7 @@ export default function SignInPage() {
         <Link href="/" className="mb-8 block text-center text-2xl font-semibold text-zinc-300">
           Parity<span className="text-bunPurple-300/90">Cart</span>
         </Link>
-        <AuthForm />
+        <AuthForm mode="sign-in" />
       </div>
     </div>
   )

@@ -1,5 +1,5 @@
-import { LoginForm } from "../_components/login-form"
 import Link from "next/link"
+import { AuthForm } from "../_components/auth-form"
 
 export default function SignUpPage() {
   return (
@@ -8,7 +8,7 @@ export default function SignUpPage() {
         <Link href="/" className="text-center font-semibold text-zinc-300">
           Parity<span className="text-bunPurple-300/90">Cart</span>
         </Link>
-        <LoginForm />
+        <AuthForm mode="sign-up" />
       </div>
     </div>
   )
