@@ -5,8 +5,6 @@ import Link from "next/link"
 import type React from "react"
 import { signIn } from "@/lib/auth"
 
-type SocialProvider = "github" | "google";
-
 interface AuthFormProps extends React.ComponentPropsWithoutRef<"div"> {
   mode?: "sign-in" | "sign-up"
 }
