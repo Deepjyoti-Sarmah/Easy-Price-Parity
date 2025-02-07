@@ -1,7 +1,6 @@
 import { createAuthClient } from "better-auth/react"
-import { BASE_URL } from "./env"
 export const authClient = createAuthClient({
-  baseURL: BASE_URL
+  baseURL: process.env.BETTER_AUTH_URL as string
 })
 
 export const {

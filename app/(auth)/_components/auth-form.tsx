@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Link from "next/link"
 import type React from "react"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { useToast } from "@/hooks/use-toast"
 import { authClient } from "@/lib/auth-client"
 
