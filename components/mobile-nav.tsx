@@ -20,24 +20,26 @@ export const MobileNav = ({ user }: MobileNavProps) => {
       <div className="flex flex-col space-y-4 px-2 m-2 text-zinc-300">
         {user ? (
           <>
-            <form
+            {/* <form
               action={async () => {
                 // "use server"
                 await signOut({
                   redirectTo: "/"
                 })
               }}
+            > */}
+            <Link
+              href="/sign-out"
+              onClick={() => setIsOpen(false)}
+              className={buttonVariants({
+                size: "lg",
+                variant: "ghost",
+                className: "hover:bg-bun-mute-background/60 hover:text-bun-mute-white"
+              })}
             >
-              <Button
-                size="lg"
-                variant="ghost"
-                type="submit"
-                className="hover:bg-bun-mute-background/60 hover:text-bun-mute-white"
-                onClick={() => setIsOpen(false)}
-              >
-                Sign out
-              </Button>
-            </form>
+              Sign out
+            </Link>
+            {/* </form> */}
 
             <Link
               href="/dashboard"
