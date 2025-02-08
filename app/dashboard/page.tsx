@@ -13,8 +13,14 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { AppSidebar } from "./_components/app-sidebar"
+import { auth } from "@/lib/auth"
 
-export default function Page() {
+export default async function Page() {
+  const session = await auth();
+
+  if (!session?.user)
+    return <div className="text-zinc-300 text-center m-2 text-xl">Not authenticated</div>
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -50,3 +56,4 @@ export default function Page() {
     </SidebarProvider>
   )
 }
+
