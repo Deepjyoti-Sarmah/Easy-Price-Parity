@@ -13,12 +13,3 @@ export default function SignUpPage() {
     </div>
   )
 }
-console.log("GITHUB_CLIENT_ID", process.env.GITHUB_CLIENT_ID)
-console.log("GITHUB_CLIENT_SECRET", process.env.GITHUB_CLIENT_SECRET)
-
-console.log("GITHUB_CLIENT_ID", process.env.GITHUB_CLIENT_ID)
-console.log("GITHUB_CLIENT_SECRET", process.env.GITHUB_CLIENT_SECRET)
-
-console.log("BASE_URL", process.env.BETTER_AUTH_URL)
-console.log("BETTER_AUTH_SECRET", process.env.BETTER_AUTH_SECRET)
-
