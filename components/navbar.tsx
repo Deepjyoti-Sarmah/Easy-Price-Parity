@@ -3,15 +3,13 @@ import { MaxWidthWrapper } from "./max-width-wrapper"
 import { Button, buttonVariants } from "./ui/button"
 import { ArrowRight } from "lucide-react"
 import { MobileNav } from "./mobile-nav"
-import { auth, signOut } from "@/lib/auth"
+import { auth } from "@/lib/auth"
+import { handleSignOut } from "@/actions/auth.action"
 
 export const Navbar = async () => {
 
   const session = await auth();
   const user = session?.user;
-
-  // console.log("user", typeof (user))
-  // console.log("session", typeof (session))
 
   return (
     <nav className="sticky z-50 h-16 inset-x-0 top-0 w-full border-b border-gray-800 bg-bun-background/50 backdrop-blur-lg transition-all">
@@ -26,12 +24,7 @@ export const Navbar = async () => {
             {user ? (
               <>
                 <form
-                  action={async () => {
-                    "use server"
-                    await signOut({
-                      redirectTo: "/"
-                    })
-                  }}
+                  action={handleSignOut}
                 >
                   <Button size="sm" variant="ghost" className="hover:bg-bun-mute-background/60 hover:text-bun-mute-white"
                   >
@@ -91,7 +84,7 @@ export const Navbar = async () => {
 
           {/* Mobile navigation */}
           <div className="md:hidden">
-            <MobileNav user={user} />
+            <MobileNav user={user} key={user ? "user" : "no-user"} />
           </div>
         </div>
       </MaxWidthWrapper>

@@ -1,10 +1,10 @@
 "use server";
-import { auth } from "@/lib/auth"
-import { headers } from "next/headers"
 
-export const getAuthenticatedAction = async () => {
-  const session = await auth.api.getSession({
-    headers: await headers()
+import { signOut } from "@/lib/auth";
+
+export async function handleSignOut() {
+  await signOut({
+    redirectTo: "/"
   })
-  return session;
-};
+}
+

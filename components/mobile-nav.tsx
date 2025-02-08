@@ -6,7 +6,8 @@ import Link from "next/link"
 import { ArrowRight, Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet"
 import { MaxWidthWrapper } from "./max-width-wrapper"
-import { signOut } from "@/lib/auth"
+import { handleSignOut } from "@/actions/auth.action"
+import { useRouter } from "next/navigation"
 
 interface MobileNavProps {
   user?: object
@@ -14,39 +15,38 @@ interface MobileNavProps {
 
 export const MobileNav = ({ user }: MobileNavProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const router = useRouter()
+
+  const handleSignOutClick = async () => {
+    setIsOpen(false)
+    await handleSignOut()
+    router.refresh()
+  }
 
   const NavContent = () => {
     return (
       <div className="flex flex-col space-y-4 px-2 m-2 text-zinc-300">
         {user ? (
           <>
-            {/* <form
-              action={async () => {
-                // "use server"
-                await signOut({
-                  redirectTo: "/"
-                })
-              }}
-            > */}
-            <Link
-              href="/sign-out"
-              onClick={() => setIsOpen(false)}
-              className={buttonVariants({
-                size: "lg",
-                variant: "ghost",
-                className: "hover:bg-bun-mute-background/60 hover:text-bun-mute-white"
-              })}
+            <form
+              action={handleSignOutClick}
             >
-              Sign out
-            </Link>
-            {/* </form> */}
+              <Button
+                size="lg"
+                variant="ghost"
+                className="hover:bg-bun-mute-background/60 hover:text-bun-mute-white items-center text-center w-full"
+              // onClick={() => setIsOpen(false)}
+              >
+                Sign out
+              </Button>
+            </form>
 
             <Link
               href="/dashboard"
               onClick={() => setIsOpen(false)}
               className={buttonVariants({
                 size: "lg",
-                className: "flex items-center gap-1.5"
+                className: "flex items-center gap-1.5 text-center"
               })}
             >
               Dashboard <ArrowRight className="ml-2 size-5" />
