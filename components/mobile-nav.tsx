@@ -76,6 +76,7 @@ export const MobileNav = ({ user }: MobileNavProps) => {
             >
               Sign in
             </Link>
+
             <Link
               href="/sign-up"
               onClick={() => setIsOpen(false)}
