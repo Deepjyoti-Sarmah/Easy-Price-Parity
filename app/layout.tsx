@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -25,16 +24,9 @@ export default function RootLayout({
     <html lang="en" className={cn(inter.variable, eb_garamond.variable)} suppressHydrationWarning>
       <body
         className="min-h-[calc(100vh-1px)] flex flex-col font-sans bg-bun-background antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="relative flex-1 flex flex-col">
-            {children}
-          </main>
-        </ThemeProvider>
+        <main className="relative flex-1 flex flex-col">
+          {children}
+        </main>
       </body>
     </html>
   );
